@@ -23,14 +23,22 @@ var onAuthorize = function() {
 
         // Output a list of all of the cards that the member 
         // is assigned to
-        Trello.get("members/me/cards", function(cards) {
+        Trello.get("/boards/lWxQDtB2/cards", function(cards) {
             $cards.empty();
             $.each(cards, function(ix, card) {
-                $("<a>")
-                .attr({href: card.url, target: "trello"})
+                //$("<a>")
+                //.attr({href: card.url, target: "trello"})
+                $("<button>")
+                .attr({href: "#", target: "trello"})
                 .addClass("card")
                 .text(card.name)
-                .appendTo($cards);
+                .appendTo($cards)
+                .click(function(){
+                    var userstory = prompt("Please edit your userstory:", "Enter new userstory");
+  
+                    Trello.put("cards/" + card.id + "", { name: userstory })
+                    
+                });
             });  
         });
     });
@@ -50,19 +58,17 @@ var logout = function() {
                           
 Trello.authorize({
     interactive:false,
-    success: onAuthorize
+    success: onAuthorize,
 });
 
 $("#connectLink")
 .click(function(){
     Trello.authorize({
         type: "popup",
-        success: onAuthorize
+        success: onAuthorize,
+        scope: { write: true, read: true }
     })
 });
     
 $("#disconnect").click(logout);
-
-
-
 })

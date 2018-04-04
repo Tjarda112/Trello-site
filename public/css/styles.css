@@ -7,6 +7,9 @@ body {
     border-radius: 0;
     margin: 0;
   }
+  .card{
+    display: block;
+  }
   
   .hero {
     background-image: url(../img/trello-logo-blue-flat.png);
