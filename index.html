@@ -4,51 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <title>My Node site</title>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"> </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css" </head>
+    <link rel="stylesheet" href="/css/styles.css" 
+    <script src="https://api.trello.com/1/client.js?key=7877dd27f5b9b34fc38e734dadeeff61"></script>
+</head>
 
-    <body>
-        <header>
-            <nav class="navbar navbar-inverse">
-                <a href="/" class="navbar-brand">My site</a>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
 
-        <section class="hero">
-            <div class="hero-content">
-                <!--<h2> Welcome to the site</h2>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <a href="/" class="navbar-brand">My site</a>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/about">About</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div id="loggedout">
+                <a id="connectLink" href="#">Connect To Trello</a>
+            </div>
+
+            <div id="loggedin">
+                <div id="header">
+                    Logged in to as
+                    <span id="fullName"></span>
+                    <a id="disconnect" href="#">Log Out</a>
+                </div>
+                <div id="output"></div>
+            </div>
+            <!--<h2> Welcome to the site</h2>
 <p> the best place to be</p>-->
 
-                <!--<a href="/" class="btn btn-lg btn-primary">Get Started</a>
+            <!--<a href="/" class="btn btn-lg btn-primary">Get Started</a>
 <a href="/contact" class="btn btn-lg btn-primary">Contact</a>-->
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <main>
-            <div class="container">
-                <div class="jumbotron text-center">
-                    Vul uw userstories hier in
-                </div>
+    <main>
+        <div class="container">
+            <div class="jumbotron text-center">
+                Vul uw userstories hier in
             </div>
-        </main>
+        </div>
+    </main>
 
-        <footer>
-            Tjarda Voorn. Copyright &copy; 2018
-        </footer>
-    </body>
- <!--   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="https://api.trello.com/1/client.js?key=7877dd27f5b9b34fc38e734dadeeff61"></script>
+    <footer>
+        Tjarda Voorn. Copyright &copy; 2018
+    </footer>
+</body>
+<!--
     <script type="text/javascript">	    
         Trello.authorize({
             type: "popup",
