@@ -7,10 +7,20 @@ body {
     border-radius: 0;
     margin: 0;
   }
-  .card{
+
+  .card,.addbutton{
     display: block;
   }
-  
+ .btn-primary{
+   display: block;
+ }
+  .deletebutton{
+    background-image: url(../img/Button-Delete-512.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
   .hero {
     background-image: url(../img/trello-logo-blue-flat.png);
     background-repeat: no-repeat;;

@@ -28,7 +28,7 @@ $(document).ready(function () {
                 $.each(cards, function (ix, card) {
                     $("<button>")
                         .attr({ href: "#", target: "trello" })
-                        .addClass("card")
+                        .addClass("btn btn-primary")
                         .text(card.name)
                         .appendTo($cards)
                         .click(function () {
@@ -40,6 +40,8 @@ $(document).ready(function () {
                     $("<button>")
                         .attr({ href: "#", target: "trello" })
                         .appendTo($cards)
+                        .append('<span class="glyphicon glyphicon-remove"></span>')
+                        .addClass("deletebutton")
                         .click(function () {
                             Trello.delete("cards/" + card.id)
                         });
@@ -47,8 +49,8 @@ $(document).ready(function () {
                 $("<button>")
            .attr({href: "#", target: "trello"})
            .appendTo($cards)
-           .text("New card")
-           .addClass("card")
+           .append('<span class="glyphicon glyphicon-plus"></span>')
+           .addClass("addbutton")
            .click(function(){
            var addnewus = prompt("Please eenter new userstory:", "Enter new userstory");
             Trello.post("cards/", { idList: '5a9d0a0536a40a8cd0658e1b', name: addnewus })
