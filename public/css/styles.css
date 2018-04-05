@@ -11,9 +11,7 @@ body {
   .card,.addbutton{
     display: block;
   }
- .btn-primary{
-   display: block;
- }
+ 
   .deletebutton{
     background-image: url(../img/Button-Delete-512.png) no-repeat center center fixed; 
   -webkit-background-size: cover;

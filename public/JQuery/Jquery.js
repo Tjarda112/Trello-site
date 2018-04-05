@@ -32,7 +32,7 @@ $(document).ready(function () {
                         .text(card.name)
                         .appendTo($cards)
                         .click(function () {
-                            var userstory = prompt("Please edit your userstory:", "Enter new userstory");
+                            var userstory = prompt("Please edit your userstory:", card.name);
                             Trello.put("cards/" + card.id + "", { name: userstory },
                                 location.reload())
 
@@ -45,6 +45,9 @@ $(document).ready(function () {
                         .click(function () {
                             Trello.delete("cards/" + card.id)
                         });
+
+                        $("<p>")
+                        .appendTo($cards)
                 });
                 $("<button>")
            .attr({href: "#", target: "trello"})
